@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { SnapshotService } from './shared/services/snapshot.service';
 import { LoadState } from './data/actions/app.actions';
+import { Store } from '@ngrx/store';
+import { AppState } from './reducers';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { LoadState } from './data/actions/app.actions';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private store: Store, private snapshotService: SnapshotService) { }
+  constructor(private store: Store<AppState>, private snapshotService: SnapshotService) { }
 
   loadLastSnapshot() {
     this.store.dispatch(new LoadState({ snapshot: this.snapshotService.lastSnapshot }));
