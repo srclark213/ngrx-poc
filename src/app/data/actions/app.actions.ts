@@ -1,6 +1,10 @@
 import { Action } from "@ngrx/store";
 
+export enum AppActionTypes {
+    LOADSTATE = '[App] Load State',
+}
+
 export class LoadState implements Action {
-    readonly type: string = '[App] Load State';
+    readonly type: string = AppActionTypes.LOADSTATE;
     constructor(public payload: {snapshot: any}) { }
 }

@@ -6,7 +6,7 @@ import { filter } from 'rxjs/operators';
 })
 export class SnapshotService {
 
-  public lastSnapshot: any;
+  public lastSnapshot: any = { todo: {todos: [] } };
 
   // private count = 0;
   // private LOG_CHUNK_SIZE = 5;
