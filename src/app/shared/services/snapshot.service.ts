@@ -17,13 +17,13 @@ export class SnapshotService {
   private LOG_CHUNK_SIZE = 5;
 
   constructor(private store: Store<AppState>) { 
-    this.store.subscribe(this.handleAction.bind(this));
+    this.store.subscribe(this.handleStateChange.bind(this));
   }
 
-  handleAction(action) {
+  handleStateChange(newState) {
     this.count++;
     if (this.count >= this.LOG_CHUNK_SIZE) {
-      this.lastSnapshot = action;
+      this.lastSnapshot = newState;
       this.count = 0;
     }
   }
