@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { SnapshotService } from './shared/services/snapshot.service';
 import { LoadState } from './data/actions/app.actions';
 import { Store } from '@ngrx/store';
-import { AppState } from './reducers';
+import { AppState } from './data/reducers';
 
 @Component({
   selector: 'app-root',

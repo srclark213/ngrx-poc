@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
-import { filter, take, map, tap } from 'rxjs/operators';
-import { Store, Action } from '@ngrx/store';
-import { Actions, Effect, ofType } from '@ngrx/effects';
-import { AppState } from 'src/app/reducers';
-import { Observable } from 'rxjs';
-import { TodoActionTypes } from 'src/app/data/actions/todo.actions';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/data/reducers';
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +12,12 @@ export class SnapshotService {
   private count = 0;
   private LOG_CHUNK_SIZE = 5;
 
-  constructor(private store: Store<AppState>) { 
+  constructor(private store: Store<AppState>) {
     this.store.subscribe(this.handleStateChange.bind(this));
   }
 
-  handleStateChange(newState) {
+  handleStateChange(newState: AppState) {
+    console.log(newState.actionHistory);
     this.count++;
     if (this.count >= this.LOG_CHUNK_SIZE) {
       this.lastSnapshot = newState;

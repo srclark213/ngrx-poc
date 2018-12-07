@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TodoModel } from 'src/app/data/models/todo.model';
-import { AppState, selectTodos } from 'src/app/reducers';
+import { AppState, selectTodos } from 'src/app/data/reducers';
 import { Store, select } from '@ngrx/store';
 
 @Component({

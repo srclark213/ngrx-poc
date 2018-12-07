@@ -7,10 +7,10 @@ import { TodoContainerComponent } from './containers/todo-container/todo-contain
 import { NewTodoComponent } from './components/new-todo/new-todo.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { SnapshotService } from './shared/services/snapshot.service';
-import { appRoutes } from './routes'
+import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { reducers, metaReducers } from './data/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';

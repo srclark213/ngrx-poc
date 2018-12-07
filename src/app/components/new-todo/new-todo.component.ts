@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { CreateTodo } from 'src/app/data/actions/todo.actions';
 import { TodoModel } from 'src/app/data/models/todo.model';
 import { Observable } from 'rxjs';
-import { AppState, selectTodos } from 'src/app/reducers';
+import { AppState, selectTodos } from 'src/app/data/reducers';
 
 @Component({
   selector: 'app-new-todo',

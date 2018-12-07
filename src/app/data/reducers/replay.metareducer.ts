@@ -1,4 +1,4 @@
-import { AppActionTypes } from "../data/actions/app.actions";
+import { AppActionTypes } from '../actions/app.actions';
 
 export function replay(reducer) {
     return function(state, action) {
@@ -8,5 +8,5 @@ export function replay(reducer) {
         }
 
         return reducer(state, action);
-    }
+    };
 }
