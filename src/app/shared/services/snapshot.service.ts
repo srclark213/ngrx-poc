@@ -7,7 +7,7 @@ import { AppState } from 'src/app/data/reducers';
 })
 export class SnapshotService {
 
-  public lastSnapshot: any;
+  public lastSnapshot: AppState;
 
   private count = 0;
   private LOG_CHUNK_SIZE = 5;
@@ -17,7 +17,6 @@ export class SnapshotService {
   }
 
   handleStateChange(newState: AppState) {
-    console.log(newState.actionHistory);
     this.count++;
     if (this.count >= this.LOG_CHUNK_SIZE) {
       this.lastSnapshot = newState;

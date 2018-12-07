@@ -14,6 +14,7 @@ import { reducers, metaReducers } from './data/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
+import { HistoryService } from './shared/services/history.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { EffectsModule } from '@ngrx/effects';
     FormsModule,
     RouterModule.forRoot(appRoutes),
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([HistoryService]),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [
